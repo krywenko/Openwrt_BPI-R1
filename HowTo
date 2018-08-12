@@ -7,7 +7,7 @@ copy startMQTT to /usr/sbin/
 
 copy MonMQTT to to init.d
 
-install collectd -exec
+install collectd-mod-exec
 enable  it and point  to wind, grid & solar   ie /usr/bin/grid ( optional mqttcollect)
 
 save and apply
