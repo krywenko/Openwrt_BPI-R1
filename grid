@@ -1,0 +1,14 @@
+ 
+#!/bin/sh
+
+# COLLECTD_INTERVAL may have trailing decimal places, but sleep rejects floating point.
+INTERVAL=$(printf %.0f $COLLECTD_INTERVAL)
+
+while true; do
+  val=$(awk '{s+=$1}END{print s/NR}' RS=" " /tmp/MQTT/grid.TMP)
+rm -f /tmp/MQTT/grid.TMP
+  echo "PUTVAL \"$COLLECTD_HOSTNAME/exec-Energy/power-grid\" N:$val"
+#rm /tmp/grid.TMP
+  sleep  $INTERVAL
+done
+

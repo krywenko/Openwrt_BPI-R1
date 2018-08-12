@@ -1,0 +1,6 @@
+ #!/bin/sh
+
+#/usr/bin/grid.pl
+sudo -Eu nobody grid.pl &
+sudo -Eu nobody  wind.pl &
+sudo -Eu nobody  solar.pl
