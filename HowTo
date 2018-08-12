@@ -16,8 +16,12 @@ go to system > startup and enable and start MonMQTT
 
 if you wish to add more  mqtt  threads   just  base it on the above  grid & grid.pl  plus adding it the  startMQTT list
 
-copy exec.lua to /usr/lib/lua/luci/statistics/rrdtool/definitions/  to display info in openwrtstatistics   otherwise it will only  be sent to influx after you add  it to the cp-csv list 
+copy exec.lua to /usr/lib/lua/luci/statistics/rrdtool/definitions/  to display info in openwrt statistics  
+otherwise it will only  be sent to influx after you add  it to the cp-csv list 
 
-there are 3 type currently that are reconized  Energy, Temp and Flow   if you wish to add more catagories  you can the catagories avaliable are found in /usr/share/collectd/types.db
+there are 3 type currently that are reconized  Energy, Temp and Flow   if you wish to add more catagories 
+you can the catagories avaliable are found in /usr/share/collectd/types.db
 
-in your collectd-mod-exec script  just modify  this line echo "PUTVAL \"$COLLECTD_HOSTNAME/exec-Energy/power-grid\" N:$val"  changing Energy to either Temp, Flow or what ever catagory you might of added 
+in your collectd-mod-exec script  just modify  this line 
+echo "PUTVAL \"$COLLECTD_HOSTNAME/exec-Energy/power-grid\" N:$val"  
+changing Energy to either Temp, Flow or what ever catagory you might of added 
